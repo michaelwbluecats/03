@@ -16,7 +16,10 @@
   ],
   "dependencies": {
     "foundation-sites": "~6.3.0",
-    "motion-ui": "~1.2.2"
+    "motion-ui": "~1.2.2",
+    "mqtt": "2.4.0",
+    "Snap.svg": "0.5.1",
+    "lodash": "latest"
   },
   "private": true
 }
