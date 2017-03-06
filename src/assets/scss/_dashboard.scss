@@ -17,16 +17,16 @@
         width: 100%;
         height: 100%;
         position: relative;
-        .callout {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            //opacity: 0.8;
-            @include breakpoint(xxlarge down) {
-                // All CSS in here goes inside the media query
-                background-color: #ff695e;
-                color: white;
-            }
+    }
+    .callout--style {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        //opacity: 0.8;
+        @include breakpoint(xxlarge down) {
+            // All CSS in here goes inside the media query
+            background-color: #ff695e;
+            color: white;
         }
     }
 }
@@ -40,7 +40,26 @@
     box-shadow: inset 0 0 0 2em rgba(200, 90, 172, 0.6);
 }
 
+.left-panel {
+    @include breakpoint(large) {
+        height: 95vh;
+    }
+}
+
 .menudisplay {
+    .callout--style {
+    @include breakpoint(large) {
+        // All CSS in here goes inside the media query
+        position: absolute;
+        right: 0;
+        bottom: 0; 
+        width: 24%;
+        height: 20vh;
+        h5 {
+            margin-top: 12%;
+        }
+    }        
+    }
     .ui-helper-hidden {
         display: none;
     }
@@ -109,8 +128,8 @@
 }
 
 .callout--style {
-    background-color: transparent;
-    color: #ff695e;
+    background-color: #ff695e;
+    color: white;
     border-radius: 5px;
     border: solid 2px #ff695e;
     opacity: 0.8;
