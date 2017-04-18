@@ -1,6 +1,6 @@
 $(document).foundation();
 $(document).ready(function(){
-    $.getJSON('./assets/json/config_bluecats_australia.json', function(data) {
+    $.getJSON('./assets/json/config_bankstown.json', function(data) {
         var client = EdgeBrokerClient.create(data);
         client.connect();
         client.on('beacon_changed_zone', function(beacon, newZone){
