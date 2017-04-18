@@ -1,0 +1,17 @@
+{
+  "ip": "10.14.1.44",
+  "site":"d2f74800-3ea2-7da1-d34e-d27f15b00630",
+  "map":"2f134a00-28a7-98a4-cb4d-4db0ed45a0e6",
+  "image":"./assets/img/floorplan.png",
+  "svg-width":"949",
+  "svg-height":"1227",
+  "beacons_filter":[],
+  "zones": [
+    {"id": "E4956E40DFA3", "name": "SCI Near", "x": 240.49, "y":859.36},
+    {"id": "E4956E4E4049", "name": "SCI Far", "x": 249.25, "y":474.73},
+    {"id": "E4956E40DFBA", "name": "Nate and Sandy", "x": 340.50, "y":1146.50},
+    {"id": "E4956E40DFCB", "name": "Nate and Sandy", "x": 401.90, "y":996.37},
+    {"id": "E4956E40DFBF", "name": "DC Desk", "x": 89.50, "y":1072.50},
+    {"id": "E4956E4E4092", "name": "Blueboard", "x": 745.29, "y":807.48}
+  ]
+}

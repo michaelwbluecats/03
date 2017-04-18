@@ -29,10 +29,19 @@ function BCEdgeClient(options){
 
     function message_handler(obj, message){
         var device = message.device.mac;
+        var ibeacon = message.device.iBeacon;
+        var minor = parseInt(ibeacon.substring(38, 40), 16);
+
+        //console.log(message);
+        if(obj.options.beacons_filter.length > 0){
+            if(_.indexOf(obj.options.beacons_filter, minor) < 0){
+                return;
+            }
+        }
         switch(message.event.type){
-            case 'ENTERED_EDGE':
-                obj.beacon_zones[device] = message.edgeMAC;
-                notify_subscribers(obj, 'beacon_changed_zone', device);
+            case 'ENTERED_ZONE':
+                obj.beacon_zones[minor] = message.edgeMAC;
+                notify_subscribers(obj, 'beacon_changed_zone', minor);
                 break;
         }
     }
@@ -63,8 +72,18 @@ function BCEdgeClient(options){
         this.event_delegates[event].push(delegate);
     };
 
-    this.check_zone = function(beacon){
-        return this.beacon_zones[beacon];
+    this.check_zone = function(minor){
+        return this.beacon_zones[minor];
+    };
+
+    this.get_tag_zones = function(){
+        var beacon_zones = this.beacon_zones;
+        var tags = _.keys(beacon_zones);
+        var tags_zones = [];
+        _.forEach(tags, function(tag){
+            tags_zones.push({"tag": tag, "zone": beacon_zones[tag]});
+        });
+        return tags_zones;
     };
 }
 

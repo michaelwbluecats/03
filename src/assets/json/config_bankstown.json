@@ -1,0 +1,15 @@
+{
+  "ip": "10.14.1.171",
+  "site":"d51baa00-2ea7-f4a6-c741-1355b4a0bdff",
+  "map":"95e91a00-4ea7-0aa6-3f46-d12e6aa2fe85",
+  "image":"./assets/img/floorplan2.png",
+  "svg-width":"1270",
+  "svg-height":"921",
+  "beacons_filter":["41BDD1360F65"],
+  "zones": [
+    {"id": "E4956E4E4074", "x": 300.00, "y":226.50},
+    {"id": "E4956E4E4105", "x": 989.00, "y":230.50},
+    {"id": "E4956E4E4065", "x": 964.00, "y":671.50},
+    {"id": "E4956E4E412F", "x": 302.00, "y":687.50}
+  ]
+}
