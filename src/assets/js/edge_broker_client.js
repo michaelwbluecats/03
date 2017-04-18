@@ -39,6 +39,7 @@ function BCEdgeClient(options){
             }
         }
         switch(message.event.type){
+            case 'DWELLED_IN_ZONE':
             case 'ENTERED_ZONE':
                 obj.beacon_zones[minor] = message.edgeMAC;
                 notify_subscribers(obj, 'beacon_changed_zone', minor);
