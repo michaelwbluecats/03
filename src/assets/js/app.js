@@ -52,10 +52,10 @@ $(document).ready(function(){
             if(objZone){
                 highlightZone(objZone);
             }
-            $('.callout').html('<h4>Zone: <b>' + objZone.name + '</b></h4>').show();
+            $('.callout').html('<h4>Tag number</h4> <h3>Zone: <b>' + objZone.name + '</b></h3>').show();
              setTimeout(function(){
              $('.callout').hide();
-             }, 3000)
+             }, 9000)
         }
 
         $('.num').click(function () {
