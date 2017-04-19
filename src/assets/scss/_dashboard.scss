@@ -64,6 +64,9 @@
     .ui-helper-hidden {
         display: none;
     }
+    .tabs-content, .tabs-title a {
+        font-size: 1.2rem;
+    }
     #panel3 {
         .phone {
             margin-top: 15px;
@@ -82,17 +85,18 @@
             }
         }
         .num {
-            border: 1px solid #9e9e9e;
+            border: 1px solid rgba(0,0,0,0.2);
             -webkit-border-radius: 5px;
             border-radius: 5px;
             -moz-border-radius: 5px;
-            height: 60px;
+            //height: 4em;
             background-color: #fff;
             color: #333;
             cursor: pointer;
+            margin: 0.1em
         }
         .num:hover {
-            background-color: #9e9e9e;
+            background-color: #F29C1F;
             color: #fff;
             transition-property: background-color .2s linear 0s;
             -moz-transition: background-color .2s linear 0s;
@@ -100,9 +104,9 @@
             -o-transition: background-color .2s linear 0s;
         }
         .txt {
-            font-size: 2.5em;
+            font-size: 2em;
             text-align: center;
-            margin-top: 0.3em;
+            padding: 0.3em;
             font-family: 'Lato', sans-serif;
             //line-height: 30px;
             color: #333;
@@ -139,7 +143,7 @@
 .search__form {
     width: 75%;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 1em auto;
 }
 
 .search__input {
