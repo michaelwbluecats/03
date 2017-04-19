@@ -7,9 +7,10 @@
   "svg-height":"921",
   "beacons_filter":[],
   "zones": [
-    {"id": "E4956E4E4074", "x": 300.00, "y":226.50},
-    {"id": "E4956E4E4105", "x": 989.00, "y":230.50},
-    {"id": "E4956E4E4065", "x": 964.00, "y":671.50},
-    {"id": "E4956E4E412F", "x": 302.00, "y":687.50}
+    {"id": "E4956E4E4074", "name":"Sunken Lounge", "x": 1109.00, "y":270.50, "colour_code": "purple"},
+    {"id": "E4956E4E404D", "name":"Inactive", "x": 1062.00, "y":861.50, "colour_code": "blue"},
+    {"id": "E4956E4E4105", "name":"Booth 2", "x": 763.00, "y":431.50, "colour_code": "green"},
+    {"id": "E4956E4E4065", "name":"Upper Dining", "x": 1090.00, "y":550.50, "colour_code": "orange"},
+    {"id": "E4956E4E412F", "name":"Sunken Dining", "x": 898.00, "y":747.50, "colour_code": "gray"}
   ]
 }
