@@ -4,6 +4,7 @@ var svg = Snap("#mapbg");
 var g = svg.g();
 var image;
 var zones;
+var exclusion_zone;
 var myFrames = [
     {animation: { opacity: 0.4, r: 150 }, dur: 1000 },
     {animation: { opacity: 0.2, r: 100 }, dur: 1000 },
@@ -25,13 +26,27 @@ function highlightZone(objZone){
 }
 
 function showZone(num){
-    var last_seen_zone = client.check_zone(num);
-    var objZone = _.find(zones, function(o) { return o.id === last_seen_zone; });
-    if(objZone){
-        highlightZone(objZone);
-        $('.callout').css('background-color', objZone["colour_code"]);
-        $('.callout').css('border', '2px ' + objZone["colour_code"]);
-        $('.callout').html('<h4>Tag ' + num + '</h4> <h3><b>' + objZone.name + '</b></h3>').show();
+    var event_beacon;
+    _.forEach(bclib.locationEngine.beacons, function(beacon){
+        var tag_num = parseInt(beacon.iBeacon.substring(38, 40), 16);
+        if(tag_num == num){
+            event_beacon = beacon;
+        }
+    });
+
+    var event_edge;
+    _.forEach(bclib.locationEngine.devices, function(device){
+        if(event_beacon.edgeMAC == device.mac){
+            event_edge = device;
+        }
+    });
+
+    if(event_beacon && event_edge){
+        var colour = _.find(zones, function(o) { return o.name == event_beacon.currentZone.name; });
+        highlightZone({"x":event_edge.x, "y": event_edge.y, "colour_code": colour["colour_code"]});
+        $('.callout').css('background-color', colour["colour_code"]);
+        $('.callout').css('border', '2px ' + colour["colour_code"]);
+        $('.callout').html('<h4>Tag ' + num + '</h4> <h3><b>' + event_beacon.currentZone.name + '</b></h3>').show();
         setTimeout(function(){
             $('.callout').hide();
         }, 8000)
@@ -65,22 +80,30 @@ $('.num').click(function () {
 $(document).ready(function(){
 
     $('.callout').hide();
-    $.getJSON('./assets/json/config_bankstown.json', function(data) {
-        client = EdgeBrokerClient.create(data);
-        client.connect();
-        client.on('beacon_changed_zone', function(beacon, newZone){
-            var tag_zones = client.get_tag_zones();
-            var html = '';
-            _.forEach(tag_zones, function(tag){
-                var zone =  _.find(zones, function(o) { return o.id === tag.zone; });
-                tag.zoneName = zone.name;
-                html += '<tr><td>' + tag.tag + '</td><td><a href="javacript:void(0)" onclick="showZone(' + tag.tag + ')">' + zone.name +'</a></td></tr>';
-            });
-            $('#listView').html(html);
-        });
-
-        svg.attr({width: data["svg-width"], height: data["svg-height"]});
-        image = g.image(data.image, 0,0 );
+    $.getJSON('./assets/json/config_bluecats_australia.json', function(data) {
         zones = data.zones;
+        exclusion_zone = data.exclusion_zone;
+        bclib.locationEngine.Core(data.ip, data.site);
+        bclib.locationEngine.on('setup_success', function(x){
+            var map = bclib.locationEngine.getMapInfo(data.map);
+            svg.attr({width: map.width, height: map.height});
+            image = g.image(data.image, 0,0 );
+            bclib.locationEngine.on('location_update', function(x){
+                var html = '';
+                _.forEach(bclib.locationEngine.beacons, function(beacon){
+                    if(beacon.currentZone && exclusion_zone == beacon.currentZone.name){
+                        return;
+                    }
+
+                    var tag_num = parseInt(beacon.iBeacon.substring(38, 40), 16);
+                    html += '<tr><td>' + tag_num +
+                        '</td><td><a href="javacript:void(0)" onclick="showZone(' + tag_num + ')">' + (beacon.currentZone ? beacon.currentZone.name : '') +'</a></td>' +
+                        '<td>' + beacon.zoneDwellTime + 'sec. </td></tr>';
+                });
+                $('#listView').html(html);
+            });
+        });
+        bclib.locationEngine.start();
+
     });
 });

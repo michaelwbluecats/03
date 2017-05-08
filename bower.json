@@ -19,7 +19,8 @@
     "motion-ui": "~1.2.2",
     "mqtt": "2.4.0",
     "Snap.svg": "0.5.1",
-    "lodash": "latest"
+    "lodash": "latest",
+    "d3":"latest"
   },
   "private": true
 }
