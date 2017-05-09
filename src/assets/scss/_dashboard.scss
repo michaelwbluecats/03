@@ -141,7 +141,7 @@
         }
     }
     .list-details {
-        background-color: #f6f6f6;
+        //background-color: #f6f6f6;
         border-radius: 2rem;
         padding: 0.3em;
         display: block;
@@ -152,6 +152,7 @@
         }
         table, tr, td, tbody {
             background-color: transparent;
+            border-radius: 2rem;
         }
         .tag-number {
             position: relative;
