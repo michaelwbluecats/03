@@ -5,6 +5,7 @@ var g = svg.g();
 var image;
 var zones;
 var exclusion_zone;
+var shared_timeout;
 var myFrames = [
     {animation: { opacity: 0.4, r: 150 }, dur: 1000 },
     {animation: { opacity: 0.2, r: 100 }, dur: 1000 },
@@ -47,14 +48,14 @@ function showZone(num){
         $('.callout').css('background-color', colour["colour_code"]);
         $('.callout').css('border', '2px ' + colour["colour_code"]);
         $('.callout').html('<h4>Tag ' + num + '</h4> <h3><b>' + event_beacon.currentZone.name + '</b></h3>').show();
-        setTimeout(function(){
+        shared_timeout = setTimeout(function(){
             $('.callout').hide();
         }, 8000)
     }else{
         $('.callout').css('background-color', 'red');
         $('.callout').css('border', '2px red');
         $('.callout').html('<h4>Tag not found</h4>').show();
-        setTimeout(function(){
+        shared_timeout = setTimeout(function(){
             $('.callout').hide();
         }, 8000)
     }
@@ -62,6 +63,7 @@ function showZone(num){
 }
 
 $('.num').click(function () {
+    clearTimeout(shared_timeout);
     $('.callout').hide();
     var num = $(this);
     var text = $.trim(num.find('.txt').clone().children().remove().end().text());
@@ -96,11 +98,15 @@ $(document).ready(function(){
                     }
 
                     var tag_num = parseInt(beacon.iBeacon.substring(38, 40), 16);
-                    html += '<tr><td>' + tag_num +
-                        '</td><td><a href="javacript:void(0)" onclick="showZone(' + tag_num + ')">' + (beacon.currentZone ? beacon.currentZone.name : '') +'</a></td>' +
-                        '<td>' + beacon.zoneDwellTime + 'sec. </td></tr>';
+                    html += '<div class="small-12 medium-4 large-3 columns"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="2" >' +
+                    '<div class="tag-number">' + tag_num + '</div>' +
+                        '</td><td class="tag-location">' +
+                        '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
+                        '</td></tr><tr><td class="tag-dwell-time"><h6>' +
+                    '<span class="button warning">' + beacon.zoneDwellTime + '</span></h6>' +
+                    '</td></tr></tbody></table></a></div>';
                 });
-                $('#listView').html(html);
+                $('#listContent').html(html);
             });
         });
         bclib.locationEngine.start();
