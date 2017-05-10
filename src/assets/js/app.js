@@ -100,10 +100,10 @@ $(document).ready(function(){
                     var tag_num = parseInt(beacon.iBeacon.substring(38, 40), 16);
                     html += '<div class="small-12 medium-4 large-3 columns"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="2" >' +
                     '<div class="tag-number">' + tag_num + '</div>' +
-                        '</td><td class="tag-location">' +
+                        '</td><td class="tag-location" style="background-color:#3adb76;">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
-                        '</td></tr><tr><td class="tag-dwell-time"><h6>' +
-                    '<span class="button warning">' + beacon.zoneDwellTime + '</span></h6>' +
+                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #ffae00;"><h6>' +
+                    '<span class="">' + beacon.zoneDwellTime + '</span></h6>' +
                     '</td></tr></tbody></table></a></div>';
                 });
                 $('#listContent').html(html);
