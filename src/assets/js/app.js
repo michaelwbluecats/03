@@ -98,12 +98,12 @@ $(document).ready(function(){
                     }
 
                     var tag_num = parseInt(beacon.iBeacon.substring(38, 40), 16);
-                    html += '<div class="small-12 medium-4 large-3 columns"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="2" >' +
+                    html += '<div class="small-12 medium-4 large-3 columns"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
                     '<div class="tag-number">' + tag_num + '</div>' +
-                        '</td><td class="tag-location" style="background-color:#3adb76;">' +
-                        '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
-                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #ffae00;"><h6>' +
-                    '<span class="">' + beacon.zoneDwellTime + '</span></h6>' +
+                        '</td><td class="tag-location" rowspan="2" style="background-color:#3adb76;">' +
+                        '<h3>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h3>' +
+                        '</td></tr><tr></tr><tr><td class="tag-dwell-time" style="background-color: #ffae00;"><h4>' +
+                    '<span class="">' + beacon.zoneDwellTime + '</span></h4>' +
                     '</td></tr></tbody></table></a></div>';
                 });
                 $('#listContent').html(html);
