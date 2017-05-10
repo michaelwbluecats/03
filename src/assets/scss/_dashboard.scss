@@ -160,6 +160,9 @@
         }
         &:hover {
             background-color: #cccccc;
+            -webkit-box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.5);
+            -moz-box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.5);
+            box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.5);
         }
         table, tr, td, tbody {
             //background-color: transparent;
