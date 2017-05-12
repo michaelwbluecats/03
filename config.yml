@@ -30,6 +30,7 @@ PATHS:
   # Paths to JavaScript libraries, which are combined into one file
   jsraw:
     - "bower_components/lodash/dist/lodash.min.js"
+    - "bower_components/moment/min/moment.min.js"
     - "bower_components/Snap.svg/dist/snap.svg-min.js"
     - "local_vendor/mqtt/mqtt.min.js"
     - "bower_components/d3/d3.js"

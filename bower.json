@@ -20,7 +20,8 @@
     "mqtt": "2.4.0",
     "Snap.svg": "0.5.1",
     "lodash": "latest",
-    "d3":"latest"
+    "d3":"latest",
+    "moment": "latest"
   },
   "private": true
 }

@@ -626,7 +626,7 @@
 
         mqttClient.on('connect', function () {
             connected = true;
-            bclib.locationEngine.request(mqttClient, "GET_HEALTH_REPORT", "latest", function (msg) {
+            bclib.locationEngine.request(mqttClient, "GET_HEALTH_REPORT", "SYSTEM", function (msg) {
                 if (msg && msg.status == 1)
                     options.success(msg.content);
                 else
@@ -647,7 +647,7 @@
         var mqttClient = null;
         var eventCallbacks = {};
         var connected = false;
-        var eventsTopic = 'site/' + siteID + '/map/+/edge/+/device/event/+';
+        var eventsTopic = 'locationEngine/event/+/' + siteID + '/+/+/+';
         var devices = {};
         var maps = {};
         var beacons = {};
@@ -718,14 +718,14 @@
             if (beacon.bcIdentifier)
                 return beacon.bcIdentifier;
 
+             if (beacon.bluetoothAddress)
+                return beacon.bluetoothAddress;
+
             if (beacon.iBeacon)
                 return bclib.util.iBeaconToDecimal(beacon.iBeacon);
 
             if (beacon.eddystoneUID)
                 return beacon.eddystoneUID;
-
-            if (beacon.bluetoothAddress)
-                return beacon.bluetoothAddress;
 
             return mac;
         };
@@ -893,6 +893,7 @@
                     }
                 }
             }
+
             return true;
         };
 
@@ -1861,10 +1862,10 @@
                 panel.zone.text(current);
 
                 //TODO: fix hardcodes                
-                if (current==="IN") {
+                if (current==="EAST") {
                     panel.style("background-color", "#FFFFFF");
                 }
-                else if (current==="OUT"){
+                else if (current==="WEST"){
                     panel.style("background-color", "#EEEEEE");
                 }
                 else{

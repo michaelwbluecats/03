@@ -4,12 +4,12 @@
   "map":"2f134a00-28a7-98a4-cb4d-4db0ed45a0e6",
   "image":"./assets/img/restaurant_floorplan.jpeg",
   "zones": [
-    {"name": "SCI Near","colour_code": "purple"},
-    {"name": "SCI Far", "colour_code": "blue"},
-    {"name": "Nate and Sandy", "colour_code": "green"},
-    {"name": "Nate and Sandy", "colour_code": "green"},
-    {"name": "DC Desk", "colour_code": "orange"},
-    {"name": "Blueboard", "colour_code": "gray"}
+    {"name": "SCI Near","colour_code": "#1779ba"},
+    {"name": "SCI Far", "colour_code": "#767676"},
+    {"name": "Nate and Sandy", "colour_code": "#3adb76"},
+    {"name": "Nate and Sandy", "colour_code": "#3adb76"},
+    {"name": "DC Desk", "colour_code": "#ffae00"},
+    {"name": "Blueboard", "colour_code": "#cc4b37"}
   ],
-  "exclusion_zone":""
+  "exclusion_zone":"Nate and Sandy"
 }
