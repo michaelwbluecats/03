@@ -104,12 +104,12 @@ $(document).ready(function(){
                     activeTags++;
                     var colour = _.find(zones, function(o) { return o.name == beacon.currentZone.name; });
                     var tag_num = parseInt(beacon.iBeacon.substring(36, 40), 16);
-                    html += '<div class="small-12 medium-4 large-3 columns ' + (activeTags === objCount ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="2" >' +
+                    html += '<div class="small-12 medium-4 large-3 columns ' + (activeTags === objCount ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
                     '<div class="tag-number">' + tag_num + '</div>' +
-                        '</td><td class="tag-location" style="background-color:' + colour.colour_code + ';">' +
+                        '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
-                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #ffae00;"><h6>' +
-                    '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
+                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black;"><h4>' +
+                    '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h4>' +
                     '</td></tr></tbody></table></a></div>';
                 });
                 $('#activeTags').html(activeTags);
