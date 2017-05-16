@@ -30,7 +30,8 @@ function showZone(num){
     $("#btn-map-view").click();
     var event_beacon;
     _.forEach(bclib.locationEngine.beacons, function(beacon){
-        var tag_num = parseInt(beacon.iBeacon.substring(38, 40), 16);
+        console.log(beacon);
+        var tag_num = parseInt(beacon.iBeacon.substring(36, 40), 16);
         if(tag_num == num){
             event_beacon = beacon;
         }
@@ -82,12 +83,14 @@ $('.num').click(function () {
 $(document).ready(function(){
 
     $('.callout').hide();
-    $.getJSON('./assets/json/config_bluecats_australia.json', function(data) {
+    $.getJSON('./assets/json/config_bluecats_demo.json', function(data) {
         zones = data.zones;
         exclusion_zone = data.exclusion_zone;
+        console.log(data);
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
             var map = bclib.locationEngine.getMapInfo(data.map);
+            console.log(map);
             svg.attr({width: map.width, height: map.height});
             image = g.image(data.image, 0, 0);
             bclib.locationEngine.on('location_update', function(x){
@@ -100,7 +103,7 @@ $(document).ready(function(){
                     }
                     activeTags++;
                     var colour = _.find(zones, function(o) { return o.name == beacon.currentZone.name; });
-                    var tag_num = parseInt(beacon.iBeacon.substring(38, 40), 16);
+                    var tag_num = parseInt(beacon.iBeacon.substring(36, 40), 16);
                     html += '<div class="small-12 medium-4 large-3 columns ' + (activeTags === objCount ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="2" >' +
                     '<div class="tag-number">' + tag_num + '</div>' +
                         '</td><td class="tag-location" style="background-color:' + colour.colour_code + ';">' +

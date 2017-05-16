@@ -838,8 +838,10 @@
             connect(function() {
                 bclib.locationEngine.request(mqttClient, "GET_MAP_INFO", null, function(json) {
                     mapResponse = json;
+                    console.log(json);
                     bclib.locationEngine.request(mqttClient, "GET_DEVICE_INFO", null, function(json) {
                         deviceResponse = json;
+                        console.log(json);
                         if (mapResponse.status == 0 || deviceResponse.status == 0 || 
                             !setMapsAndDevices(mapResponse.content.maps, deviceResponse.content.devices))
                             broadcast("setup_failure");
