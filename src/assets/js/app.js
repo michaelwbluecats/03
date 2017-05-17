@@ -30,7 +30,6 @@ function showZone(num){
     $("#btn-map-view").click();
     var event_beacon;
     _.forEach(bclib.locationEngine.beacons, function(beacon){
-        console.log(beacon);
         var tag_num = parseInt(beacon.iBeacon.substring(36, 40), 16);
         if(tag_num == num){
             event_beacon = beacon;
