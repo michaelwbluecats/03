@@ -105,7 +105,7 @@ $(document).ready(function(){
                     '<div class="tag-number">' + tag_num + '</div>' +
                         '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
-                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black;"><h6>' +
+                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black; display: none;"><h6>' +
                     '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
                     '</td></tr></tbody></table></a></div>';
                 });

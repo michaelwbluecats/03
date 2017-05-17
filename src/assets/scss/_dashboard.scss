@@ -4,6 +4,7 @@
 
 
 .info-display {
+    display: none;
     background-color: #51b2f1;
     border-radius: 0.5rem;
     border: 2px solid white;
@@ -191,13 +192,16 @@
             border-radius: 50%;
             background: #000;
             color: white;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bolder;
             text-align: center;
             line-height: 0;
         }
         .tag-location, .tag-dwell-time {
             color: white;
+        }
+        .tag-dwell-time {
+            background-color: black;
         }
         .tag-location h3 {
             font-weight: bolder;
