@@ -86,11 +86,9 @@ $(document).ready(function(){
     $.getJSON('./assets/json/config_bluecats_demo.json', function(data) {
         zones = data.zones;
         exclusion_zone = data.exclusion_zone;
-        console.log(data);
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
             var map = bclib.locationEngine.getMapInfo(data.map);
-            console.log(map);
             svg.attr({width: map.width, height: map.height});
             image = g.image(data.image, 0, 0);
             bclib.locationEngine.on('location_update', function(x){
@@ -108,8 +106,8 @@ $(document).ready(function(){
                     '<div class="tag-number">' + tag_num + '</div>' +
                         '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
-                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black;"><h4>' +
-                    '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h4>' +
+                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black;"><h6>' +
+                    '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
                     '</td></tr></tbody></table></a></div>';
                 });
                 $('#activeTags').html(activeTags);
