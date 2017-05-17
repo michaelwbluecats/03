@@ -6,6 +6,7 @@ var image;
 var zones;
 var exclusion_zone;
 var shared_timeout;
+var proportion;
 var myFrames = [
     {animation: { opacity: 0.4, r: 150 }, dur: 1000 },
     {animation: { opacity: 0.2, r: 100 }, dur: 1000 },
@@ -45,7 +46,7 @@ function showZone(num){
 
     if(event_beacon && event_edge){
         var colour = _.find(zones, function(o) { return o.name == event_beacon.currentZone.name; });
-        highlightZone({"x":event_edge.x, "y": event_edge.y, "colour_code": colour["colour_code"]});
+        highlightZone({"x": (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"]});
         $('.callout').css('background-color', colour["colour_code"]);
         $('.callout').css('border', '2px ' + colour["colour_code"]);
         $('.callout').html('<h4>Tag ' + num + '</h4> <h3><b>' + event_beacon.currentZone.name + '</b></h3>').show();
@@ -88,8 +89,16 @@ $(document).ready(function(){
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
             var map = bclib.locationEngine.getMapInfo(data.map);
-            svg.attr({width: map.width, height: map.height});
-            image = g.image(data.image, 0, 0);
+            var w = $('.mapdisplay').width();
+            var h;
+            if(map.width < w){
+                h = (map.height * w) / map.width;
+            }
+            //svg.attr({width: map.width, height: map.height});
+            //image = g.image(data.image, 0, 0);
+            svg.attr({width: w, height: h});
+            image = g.image(data.image, 0, 0, w, h);
+            proportion = (w / map.width);
             bclib.locationEngine.on('location_update', function(x){
                 var html = '';
                 var activeTags = 0;
