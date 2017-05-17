@@ -93,15 +93,15 @@ $(document).ready(function(){
             bclib.locationEngine.on('location_update', function(x){
                 var html = '';
                 var activeTags = 0;
-                var objCount = _.findLastIndex(_.values(bclib.locationEngine.beacons), function(o) { return o.currentZone != null &&  exclusion_zone != o.currentZone.name; });
-                _.forEach(bclib.locationEngine.beacons, function(beacon, index){
+                var beacons = _.sortBy(bclib.locationEngine.beacons, [function(beacon) { return ( beacon.iBeacon ? parseInt(beacon.iBeacon.substring(36, 40), 16) : 0); }]);
+                _.forEach(beacons, function(beacon, index){
                     if(!beacon.currentZone || exclusion_zone == beacon.currentZone.name){
                         return;
                     }
                     activeTags++;
                     var colour = _.find(zones, function(o) { return o.name == beacon.currentZone.name; });
                     var tag_num = parseInt(beacon.iBeacon.substring(36, 40), 16);
-                    html += '<div class="small-12 medium-4 large-3 columns ' + (activeTags === objCount ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
+                    html += '<div class="small-12 medium-3 large-2 columns ' + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
                     '<div class="tag-number">' + tag_num + '</div>' +
                         '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
