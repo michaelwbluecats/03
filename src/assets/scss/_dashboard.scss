@@ -154,6 +154,19 @@
             color: #3498db;
         }
     }
+    .phone {
+            &:before{
+                content: "PH";
+                color: white;
+                position: absolute;
+                background-color: green;
+                padding:0.3em;
+                border-radius: 9999em;
+                left: 0.5em;
+                top: 0.4em;
+                z-index: 9999;
+            }
+        }
     .list-details {
         background-color: #f6f6f6;
         border-radius: 1rem;
@@ -163,6 +176,7 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
         overflow: hidden;
+        position: relative;
         table {
             margin: 0;
             td.tag-location {
