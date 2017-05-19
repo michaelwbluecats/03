@@ -110,7 +110,8 @@ $(document).ready(function(){
                     activeTags++;
                     var colour = _.find(zones, function(o) { return o.name == beacon.currentZone.name; });
                     var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
-                    html += '<div class="small-12 medium-4 large-3 columns ' + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
+                    var device_type = parseInt(beacon.bcIdentifier.substring(20, 22), 16);
+                    html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
                     '<div class="tag-number">' + tag_num + '</div>' +
                         '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
