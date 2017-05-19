@@ -1,0 +1,15 @@
+{
+  "ip": "10.14.1.45",
+  "site":"fbc96a00-71a7-79b7-bc40-107a4701c5aa",
+  "map":"020e4b00-74a7-6783-b74f-368bd072bbb0",
+  "image":"./assets/img/020e4b00-74a7-6783-b74f-368bd072bbb0.jpg",
+  "zones": [
+    {"name": "Members","colour_code": "#1779ba"},
+    {"name": "Sports", "colour_code": "#cc4b37"},
+    {"name": "TV", "colour_code": "#3adb76"},
+    {"name": "Pizza", "colour_code": "#3adb76"},
+    {"name": "Cocktail", "colour_code": "#ffae00"},
+    {"name": "Billiards", "colour_code": "#767676"}
+  ],
+  "exclusion_zone":"Nate and Sandy"
+}

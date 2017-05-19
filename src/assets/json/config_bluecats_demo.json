@@ -1,15 +1,14 @@
 {
-  "ip": "10.14.1.45",
-  "site":"fbc96a00-71a7-79b7-bc40-107a4701c5aa",
-  "map":"020e4b00-74a7-6783-b74f-368bd072bbb0",
-  "image":"./assets/img/020e4b00-74a7-6783-b74f-368bd072bbb0.jpg",
+  "ip": "192.168.6.20",
+  "site":"f903be00-76a7-13a9-7046-f2943291152c",
+  "map":"2473c700-76a7-9989-fe49-190338ee7c21",
+  "image":"./assets/img/2473c700-76a7-9989-fe49-190338ee7c21.jpg",
   "zones": [
-    {"name": "Members","colour_code": "#1779ba"},
-    {"name": "Sports", "colour_code": "#cc4b37"},
-    {"name": "TV", "colour_code": "#3adb76"},
-    {"name": "Pizza", "colour_code": "#3adb76"},
-    {"name": "Cocktail", "colour_code": "#ffae00"},
-    {"name": "Billiards", "colour_code": "#767676"}
+    {"name": "Zone 1","colour_code": "#1779ba"},
+    {"name": "Zone 2", "colour_code": "#cc4b37"},
+    {"name": "Zone 3", "colour_code": "#3adb76"},
+    {"name": "Zone 4", "colour_code": "#3adb76"},
+    {"name": "Home", "colour_code": "#ffae00"}
   ],
-  "exclusion_zone":"Nate and Sandy"
+  "exclusion_zone":"Home"
 }

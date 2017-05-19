@@ -9,7 +9,7 @@
     {"name": "Nate and Sandy", "colour_code": "#3adb76"},
     {"name": "Nate and Sandy", "colour_code": "#3adb76"},
     {"name": "DC Desk", "colour_code": "#ffae00"},
-    {"name": "Blueboard", "colour_code": "#cc4b37"}
+    {"name": "Round Room", "colour_code": "#cc4b37"}
   ],
-  "exclusion_zone":"Nate and Sandy"
+  "exclusion_zone":""
 }

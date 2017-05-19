@@ -31,7 +31,7 @@ function showZone(num){
     $("#btn-map-view").click();
     var event_beacon;
     _.forEach(bclib.locationEngine.beacons, function(beacon){
-        var tag_num = parseInt(beacon.iBeacon.substring(36, 40), 16);
+        var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
         if(tag_num == num){
             event_beacon = beacon;
         }
@@ -83,7 +83,7 @@ $('.num').click(function () {
 $(document).ready(function(){
 
     $('.callout').hide();
-    $.getJSON('./assets/json/config_bluecats_demo.json', function(data) {
+    $.getJSON('./assets/json/config_bluecats_australia.json', function(data) {
         zones = data.zones;
         exclusion_zone = data.exclusion_zone;
         bclib.locationEngine.Core(data.ip, data.site);
@@ -102,19 +102,19 @@ $(document).ready(function(){
             bclib.locationEngine.on('location_update', function(x){
                 var html = '';
                 var activeTags = 0;
-                var beacons = _.sortBy(bclib.locationEngine.beacons, [function(beacon) { return ( beacon.iBeacon ? parseInt(beacon.iBeacon.substring(36, 40), 16) : 0); }]);
+                var beacons = _.sortBy(bclib.locationEngine.beacons, [function(beacon) { return ( beacon.bcIdentifier ? parseInt(beacon.bcIdentifier.substring(26, 30), 16) : 0); }]);
                 _.forEach(beacons, function(beacon, index){
-                    if(!beacon.currentZone || exclusion_zone == beacon.currentZone.name){
+                    if(!beacon.currentZone || !beacon.bcIdentifier || exclusion_zone == beacon.currentZone.name){
                         return;
                     }
                     activeTags++;
                     var colour = _.find(zones, function(o) { return o.name == beacon.currentZone.name; });
-                    var tag_num = parseInt(beacon.iBeacon.substring(36, 40), 16);
-                    html += '<div class="small-12 medium-3 large-2 columns ' + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
+                    var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
+                    html += '<div class="small-12 medium-4 large-3 columns ' + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
                     '<div class="tag-number">' + tag_num + '</div>' +
                         '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
-                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black; display: none;"><h6>' +
+                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black;"><h6>' +
                     '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
                     '</td></tr></tbody></table></a></div>';
                 });
