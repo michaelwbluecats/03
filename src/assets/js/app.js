@@ -71,7 +71,25 @@ function showZone(num){
     }
 }
 
-
+function loadMap(imageSrc, map){
+    var w;
+    var h;
+    var maxw = $('.mapdisplay').width();
+    var maxh = $('.mapdisplay').height();
+    if(maxw > map.width || maxh > map.height){
+        if(map.width >= map.height){
+            w = maxw;
+            h = (map.height * maxw) / map.width;
+        }else{
+            h = maxh;
+            w = (map.width * maxh) / map.height;
+        }
+    }
+    svg.attr({width: maxw, height: maxh});
+    image = g.image(imageSrc, ((maxw - w)/2), 0, w, h);
+    proportion = (w / map.width);
+    offset = ((maxw - w)/2);
+}
 
 $(document).ready(function(){
     $('.num').click(function () {
@@ -99,26 +117,13 @@ $(document).ready(function(){
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
             var map = bclib.locationEngine.getMapInfo(data.map);
-            var w;
-            var h;
-            var maxw = $('.mapdisplay').width();
-            var maxh = $('.mapdisplay').height();
-            if(maxw > map.width || maxh > map.height){
-                if(map.width >= map.height){
-                    w = maxw;
-                    h = (map.height * maxw) / map.width;
-                }else{
-                    h = maxh;
-                    w = (map.width * maxh) / map.height;
-                }
-            }
+            console.log(map);
+            loadMap(data.image, map);
 
             //svg.attr({width: map.width, height: map.height});
             //image = g.image(data.image, 0, 0);
-            svg.attr({width: maxw, height: maxh});
-            image = g.image(data.image, ((maxw - w)/2), 0, w, h);
-            proportion = (w / map.width);
-            offset = ((maxw - w)/2);
+
+
             bclib.locationEngine.on('location_update', function(x){
                 var html = '';
                 var activeTags = 0;
