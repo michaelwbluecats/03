@@ -7,6 +7,7 @@ var zones;
 var exclusion_zone;
 var shared_timeout;
 var proportion;
+var offset = 0;
 var myFrames = [
     {animation: { opacity: 0.4, r: 150 }, dur: 1000 },
     {animation: { opacity: 0.2, r: 100 }, dur: 1000 },
@@ -31,11 +32,18 @@ function showZone(num){
     $("#btn-map-view").click();
     var event_beacon;
     _.forEach(bclib.locationEngine.beacons, function(beacon){
+        if(!beacon.bcIdentifier){
+            return;
+        }
         var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
         if(tag_num == num){
             event_beacon = beacon;
         }
     });
+
+    if(!event_beacon){
+        return;
+    }
 
     var event_edge;
     _.forEach(bclib.locationEngine.devices, function(device){
@@ -46,7 +54,7 @@ function showZone(num){
 
     if(event_beacon && event_edge){
         var colour = _.find(zones, function(o) { return o.name == event_beacon.currentZone.name; });
-        highlightZone({"x": (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"]});
+        highlightZone({"x": offset + (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"]});
         $('.callout').css('background-color', colour["colour_code"]);
         $('.callout').css('border', '2px ' + colour["colour_code"]);
         $('.callout').html('<h4>Tag ' + num + '</h4> <h3><b>' + event_beacon.currentZone.name + '</b></h3>').show();
@@ -63,24 +71,26 @@ function showZone(num){
     }
 }
 
-$('.num').click(function () {
-    clearTimeout(shared_timeout);
-    $('.callout').hide();
-    var num = $(this);
-    var text = $.trim(num.find('.txt').clone().children().remove().end().text());
-    var telNumber = $('#telNumber');
-    if(text === 'Search'){
-        showZone($(telNumber).val());
-        $(telNumber).val('');
-    } else if(text === 'Del'){
-        $(telNumber).val('');
-    }
-    else {
-        $(telNumber).val(telNumber.val() + text);
-    }
-});
+
 
 $(document).ready(function(){
+    $('.num').click(function () {
+        clearTimeout(shared_timeout);
+        $('.callout').hide();
+        var num = $(this);
+        var text = $.trim(num.find('.txt').clone().children().remove().end().text());
+        var telNumber = $('#telNumber');
+        if(text === 'Search'){
+            showZone($(telNumber).val());
+            $(telNumber).val('');
+        } else if(text === 'Del'){
+            $(telNumber).val('');
+        }
+        else {
+            $(telNumber).val(telNumber.val() + text);
+        }
+    });
+
 
     $('.callout').hide();
     $.getJSON('./assets/json/config_bluecats_australia.json', function(data) {
@@ -89,16 +99,26 @@ $(document).ready(function(){
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
             var map = bclib.locationEngine.getMapInfo(data.map);
-            var w = $('.mapdisplay').width();
+            var w;
             var h;
-            if(map.width < w){
-                h = (map.height * w) / map.width;
+            var maxw = $('.mapdisplay').width();
+            var maxh = $('.mapdisplay').height();
+            if(maxw > map.width || maxh > map.height){
+                if(map.width >= map.height){
+                    w = maxw;
+                    h = (map.height * maxw) / map.width;
+                }else{
+                    h = maxh;
+                    w = (map.width * maxh) / map.height;
+                }
             }
+
             //svg.attr({width: map.width, height: map.height});
             //image = g.image(data.image, 0, 0);
-            svg.attr({width: w, height: h});
-            image = g.image(data.image, 0, 0, w, h);
+            svg.attr({width: maxw, height: maxh});
+            image = g.image(data.image, ((maxw - w)/2), 0, w, h);
             proportion = (w / map.width);
+            offset = ((maxw - w)/2);
             bclib.locationEngine.on('location_update', function(x){
                 var html = '';
                 var activeTags = 0;
@@ -115,7 +135,7 @@ $(document).ready(function(){
                     '<div class="tag-number">' + tag_num + '</div>' +
                         '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
-                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black; display: none;"><h6>' +
+                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black;"><h6>' +
                     '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
                     '</td></tr></tbody></table></a></div>';
                 });
