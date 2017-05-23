@@ -117,12 +117,7 @@ $(document).ready(function(){
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
             var map = bclib.locationEngine.getMapInfo(data.map);
-            console.log(map);
             loadMap(data.image, map);
-
-            //svg.attr({width: map.width, height: map.height});
-            //image = g.image(data.image, 0, 0);
-
 
             bclib.locationEngine.on('location_update', function(x){
                 var html = '';
