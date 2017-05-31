@@ -1,8 +1,7 @@
 {
-  "ip": "192.168.6.20",
+  "ip": "10.14.1.49",
   "site":"d51baa00-2ea7-f4a6-c741-1355b4a0bdff",
-  "map":"95e91a00-4ea7-0aa6-3f46-d12e6aa2fe85",
-  "image":"./assets/img/floorplan2.png",
+  "maps": [{"id": "95e91a00-4ea7-0aa6-3f46-d12e6aa2fe85", "image":"./assets/img/95e91a00-4ea7-0aa6-3f46-d12e6aa2fe85.png"}],
   "svg-width":"1270",
   "svg-height":"921",
   "beacons_filter":[],

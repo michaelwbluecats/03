@@ -909,8 +909,9 @@
                 callback();
             });
             setTimeout(function () {
-                if (!connected)
+                if (!connected){
                     broadcast("connect_failure");
+                }
             }, 1000);
         }
 

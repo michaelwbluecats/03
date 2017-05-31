@@ -1,8 +1,7 @@
 {
   "ip": "192.168.6.20",
   "site":"f903be00-76a7-13a9-7046-f2943291152c",
-  "map":"2473c700-76a7-9989-fe49-190338ee7c21",
-  "image":"./assets/img/2473c700-76a7-9989-fe49-190338ee7c21.jpg",
+  "maps":[{"id": "2473c700-76a7-9989-fe49-190338ee7c21", "image":"./assets/img/2473c700-76a7-9989-fe49-190338ee7c21.jpg"}],
   "zones": [
     {"name": "Zone 1","colour_code": "#1779ba"},
     {"name": "Zone 2", "colour_code": "#cc4b37"},

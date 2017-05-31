@@ -3,8 +3,8 @@ var client;
 var svg = Snap("#mapbg");
 var g = svg.g();
 var image;
-var zones;
-var exclusion_zone;
+var config;
+var maps = [];
 var shared_timeout;
 var proportion;
 var offset = 0;
@@ -29,7 +29,7 @@ function highlightZone(objZone){
 }
 
 function showZone(num){
-    $("#btn-map-view").click();
+
     var event_beacon;
     _.forEach(bclib.locationEngine.beacons, function(beacon){
         if(!beacon.bcIdentifier){
@@ -52,8 +52,11 @@ function showZone(num){
         }
     });
 
+    $("#btn-map-view").click();
     if(event_beacon && event_edge){
-        var colour = _.find(zones, function(o) { return o.name == event_beacon.currentZone.name; });
+        var map = _.find(maps, function(m) { return m.id  == event_edge.mapID; });
+        loadMap(map);
+        var colour = _.find(config.zones, function(o) { return o.name == event_beacon.currentZone.name; });
         highlightZone({"x": offset + (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"]});
         $('.callout').css('background-color', colour["colour_code"]);
         $('.callout').css('border', '2px ' + colour["colour_code"]);
@@ -71,7 +74,7 @@ function showZone(num){
     }
 }
 
-function loadMap(imageSrc, map){
+function loadMap(map){
     var w;
     var h;
     var maxw = $('.mapdisplay').width();
@@ -86,7 +89,10 @@ function loadMap(imageSrc, map){
         }
     }
     svg.attr({width: maxw, height: maxh});
-    image = g.image(imageSrc, ((maxw - w)/2), 0, w, h);
+    if(image) {
+        image.remove();
+    }
+    image = g.image(map.image, ((maxw - w)/2), 0, w, h);
     proportion = (w / map.width);
     offset = ((maxw - w)/2);
 }
@@ -111,24 +117,28 @@ $(document).ready(function(){
 
 
     $('.callout').hide();
-    $.getJSON('./assets/json/config_bluecats_australia.json', function(data) {
-        zones = data.zones;
-        exclusion_zone = data.exclusion_zone;
+    $.getJSON('./assets/json/config_bluecats_tradies.json', function(data) {
+        config = data;
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
-            var map = bclib.locationEngine.getMapInfo(data.map);
-            loadMap(data.image, map);
+            _.each(data.maps, function(map){
+                var mapInfo = bclib.locationEngine.getMapInfo(map.id);
+                mapInfo.image = map.image;
+                maps.push(mapInfo);
+            });
+
+            loadMap(maps[0]);
 
             bclib.locationEngine.on('location_update', function(x){
                 var html = '';
                 var activeTags = 0;
                 var beacons = _.sortBy(bclib.locationEngine.beacons, [function(beacon) { return ( beacon.bcIdentifier ? parseInt(beacon.bcIdentifier.substring(26, 30), 16) : 0); }]);
                 _.forEach(beacons, function(beacon, index){
-                    if(!beacon.currentZone || !beacon.bcIdentifier || exclusion_zone == beacon.currentZone.name){
+                    if(!beacon.currentZone || !beacon.bcIdentifier || config.exclusion_zone == beacon.currentZone.name){
                         return;
                     }
                     activeTags++;
-                    var colour = _.find(zones, function(o) { return o.name == beacon.currentZone.name; });
+                    var colour = _.find(config.zones, function(o) { return o.name == beacon.currentZone.name; });
                     var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
                     var device_type = parseInt(beacon.bcIdentifier.substring(20, 22), 16);
                     html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
