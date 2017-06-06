@@ -9,5 +9,6 @@
     {"name": "Zone 4", "colour_code": "#3adb76"},
     {"name": "Home", "colour_code": "#ffae00"}
   ],
-  "exclusion_zone":"Home"
+  "exclusion_zone":"Home",
+  "notification_duration":4000
 }

@@ -11,5 +11,7 @@
     {"id": "E4956E4E4105", "name":"Booth 2", "x": 763.00, "y":431.50, "colour_code": "green"},
     {"id": "E4956E4E4065", "name":"Upper Dining", "x": 1090.00, "y":550.50, "colour_code": "orange"},
     {"id": "E4956E4E412F", "name":"Sunken Dining", "x": 898.00, "y":747.50, "colour_code": "gray"}
-  ]
+  ],
+  "exclusion_zone":"",
+  "notification_duration":4000
 }

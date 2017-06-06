@@ -10,5 +10,6 @@
     {"name": "DC Desk", "colour_code": "#ffae00"},
     {"name": "Round Room", "colour_code": "#cc4b37"}
   ],
-  "exclusion_zone":""
+  "exclusion_zone":"",
+  "notification_duration":4000
 }

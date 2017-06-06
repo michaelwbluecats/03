@@ -8,12 +8,7 @@ var maps = [];
 var shared_timeout;
 var proportion;
 var offset = 0;
-var myFrames = [
-    {animation: { opacity: 0.4, r: 150 }, dur: 1000 },
-    {animation: { opacity: 0.2, r: 100 }, dur: 1000 },
-    {animation: { opacity: 0.4, r: 150 }, dur: 1000 },
-    {animation: { opacity: 0.2, r: 100 }, dur: 1000 }
-];
+var myFrames;
 
 function nextFrame ( el, frameArray,  whichFrame, callback ) {
     if( whichFrame >= frameArray.length ) { return callback(); }
@@ -28,7 +23,7 @@ function highlightZone(objZone){
     });
 }
 
-function showZone(num){
+function showZone(num, returnTo){
 
     var event_beacon;
     _.forEach(bclib.locationEngine.beacons, function(beacon){
@@ -63,14 +58,20 @@ function showZone(num){
         $('.callout').html('<h4>Tag ' + num + '</h4> <h3><b>' + event_beacon.currentZone.name + '</b></h3>').show();
         shared_timeout = setTimeout(function(){
             $('.callout').hide();
-        }, 8000)
+            if(returnTo){
+                $(returnTo == 'map' ? '#btn-map-view' : '#btn-list-view').click();
+            }
+        }, config.notification_duration)
     }else{
         $('.callout').css('background-color', 'red');
         $('.callout').css('border', '2px red');
         $('.callout').html('<h4>Tag not found</h4>').show();
         shared_timeout = setTimeout(function(){
             $('.callout').hide();
-        }, 8000)
+            if(config.default_view){
+                $(config.default_view == 'map' ? '#btn-map-view' : '#btn-list-view').click();
+            }
+        }, config.notification_duration)
     }
 }
 
@@ -119,6 +120,13 @@ $(document).ready(function(){
     $('.callout').hide();
     $.getJSON('./assets/json/config_bluecats_tradies.json', function(data) {
         config = data;
+        var quarter_duration = config.notification_duration / 4;
+        myFrames = [
+            {animation: { opacity: 0.4, r: 150 }, dur: quarter_duration },
+            {animation: { opacity: 0.2, r: 100 }, dur: quarter_duration },
+            {animation: { opacity: 0.4, r: 150 }, dur: quarter_duration },
+            {animation: { opacity: 0.2, r: 100 }, dur: quarter_duration }
+        ];
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
             _.each(data.maps, function(map){
@@ -141,7 +149,7 @@ $(document).ready(function(){
                     var colour = _.find(config.zones, function(o) { return o.name == beacon.currentZone.name; });
                     var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
                     var device_type = parseInt(beacon.bcIdentifier.substring(20, 22), 16);
-                    html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ')"><table><tbody><tr><td rowspan="3" >' +
+                    html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
                     '<div class="tag-number">' + tag_num + '</div>' +
                         '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                         '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
