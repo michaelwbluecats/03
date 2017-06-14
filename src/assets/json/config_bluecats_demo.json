@@ -10,5 +10,6 @@
     {"name": "Home", "colour_code": "#ffae00"}
   ],
   "exclusion_zone":"Home",
-  "notification_duration":4000
+  "notification_duration":4000,
+  "show_dwell_time": false
 }

@@ -14,5 +14,6 @@
     {"name": "Billiards", "colour_code": "#767676"}
   ],
   "exclusion_zone": "Nate and Sandy",
-  "notification_duration": 2000
+  "notification_duration": 2000,
+  "show_dwell_time": false
 }

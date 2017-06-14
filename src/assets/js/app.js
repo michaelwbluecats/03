@@ -80,19 +80,19 @@ function loadMap(map){
     var h;
     var maxw = $('.mapdisplay').width();
     var maxh = $('.mapdisplay').height();
-    if(maxw > map.width || maxh > map.height){
-        if(map.width >= map.height){
-            w = maxw;
-            h = (map.height * maxw) / map.width;
-        }else{
-            h = maxh;
-            w = (map.width * maxh) / map.height;
-        }
+
+    if(map.width >= map.height){
+        w = maxw;
+        h = (map.height * maxw) / map.width;
+    }else{
+        h = maxh;
+        w = (map.width * maxh) / map.height;
     }
     svg.attr({width: maxw, height: maxh});
     if(image) {
         image.remove();
     }
+
     image = g.image(map.image, ((maxw - w)/2), 0, w, h);
     proportion = (w / map.width);
     offset = ((maxw - w)/2);
@@ -118,7 +118,7 @@ $(document).ready(function(){
 
 
     $('.callout').hide();
-    $.getJSON('./assets/json/config_bluecats_tradies.json', function(data) {
+    $.getJSON('./assets/json/config_glen_hotel.json', function(data) {
         config = data;
         var quarter_duration = config.notification_duration / 4;
         myFrames = [
@@ -149,13 +149,22 @@ $(document).ready(function(){
                     var colour = _.find(config.zones, function(o) { return o.name == beacon.currentZone.name; });
                     var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
                     var device_type = parseInt(beacon.bcIdentifier.substring(20, 22), 16);
-                    html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
-                    '<div class="tag-number">' + tag_num + '</div>' +
-                        '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
-                        '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
-                        '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black;"><h6>' +
-                    '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
-                    '</td></tr></tbody></table></a></div>';
+                    if(config.show_dwell_time){
+                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
+                            '<div class="tag-number">' + tag_num + '</div>' +
+                            '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
+                            '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
+                            '</td></tr><tr><td class="tag-dwell-time" style="background-color: #black;"><h6>' +
+                            '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
+                            '</td></tr></tbody></table></a></div>';
+                    }else{
+                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
+                            '<div class="tag-number">' + tag_num + '</div>' +
+                            '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
+                            '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
+                            '</td></tr><tr></tr></tbody></table></a></div>';
+                    }
+
                 });
                 $('#activeTags').html(activeTags);
                 $('#listContent').html(html);

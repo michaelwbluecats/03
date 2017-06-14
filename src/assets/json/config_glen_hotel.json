@@ -1,0 +1,21 @@
+{
+  "ip": "10.14.1.47",
+  "site":"da861600-91a7-01af-624a-a58ad621d7d0",
+  "maps":[
+    {"id":"0b242c00-92a7-279d-e644-31fe1a3042fe", "image":"./assets/img/0b242c00-92a7-279d-e644-31fe1a3042fe.png"}
+  ],
+  "zones": [
+    {"name": "Lower Beer Garden","colour_code": "#1369FF"},
+    {"name": "Veranda", "colour_code": "#A106FF"},
+    {"name": "Sports", "colour_code": "#007C0E"},
+    {"name": "Dance Floor", "colour_code": "#D43900"},
+    {"name": "Gaming", "colour_code": "#E70000"},
+    {"name": "Deck Lounge", "colour_code": "#696969"},
+    {"name": "Pizza Courtyard", "colour_code": "#000000"},
+    {"name": "Deck", "colour_code": "#3B0053"},
+    {"name": "Main Entry", "colour_code": "#006060"}
+  ],
+  "exclusion_zone": "",
+  "notification_duration": 4000,
+  "show_dwell_time": false
+}

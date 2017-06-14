@@ -13,5 +13,6 @@
     {"id": "E4956E4E412F", "name":"Sunken Dining", "x": 898.00, "y":747.50, "colour_code": "gray"}
   ],
   "exclusion_zone":"",
-  "notification_duration":4000
+  "notification_duration":4000,
+  "show_dwell_time": false
 }

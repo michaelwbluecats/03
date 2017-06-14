@@ -3,13 +3,15 @@
   "site":"d2f74800-3ea2-7da1-d34e-d27f15b00630",
   "maps":[{"id": "2f134a00-28a7-98a4-cb4d-4db0ed45a0e6", "image":"./assets/img/floorplan.png"}],
   "zones": [
-    {"name": "SCI Near","colour_code": "#1779ba"},
-    {"name": "SCI Far", "colour_code": "#767676"},
-    {"name": "Nate and Sandy", "colour_code": "#3adb76"},
-    {"name": "Nate and Sandy", "colour_code": "#3adb76"},
-    {"name": "DC Desk", "colour_code": "#ffae00"},
+    {"name": "Boardroom","colour_code": "#1779ba"},
+    {"name": "Technology", "colour_code": "#767676"},
+    {"name": "Executive", "colour_code": "#3adb76"},
+    {"name": "Marketing", "colour_code": "#3adb76"},
+    {"name": "Sales", "colour_code": "#ffae00"},
+    {"name": "Blueboard", "colour_code": "#cc4b37"},
     {"name": "Round Room", "colour_code": "#cc4b37"}
   ],
   "exclusion_zone":"",
-  "notification_duration":4000
+  "notification_duration":4000,
+  "show_dwell_time": false
 }
