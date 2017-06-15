@@ -1,0 +1,15 @@
+{
+  "ip": "192.168.178.48",
+  "site":"91cd1f00-91a7-7898-fc4b-26810524375a",
+  "maps":[
+    {"id":"d6d12200-91a7-3daa-6d40-b1fd95575def", "image":"./assets/img/d6d12200-91a7-3daa-6d40-b1fd95575def.png"}
+  ],
+  "zones": [
+    {"name": "Office","colour_code": "#1369FF"},
+    {"name": "Dining", "colour_code": "#A106FF"}
+  ],
+  "exclusion_zone": "",
+  "notification_duration": 2000,
+  "show_dwell_time": false,
+  "zone_radius": 75
+}

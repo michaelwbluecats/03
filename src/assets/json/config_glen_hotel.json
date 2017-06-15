@@ -16,6 +16,7 @@
     {"name": "Main Entry", "colour_code": "#006060"}
   ],
   "exclusion_zone": "",
-  "notification_duration": 4000,
-  "show_dwell_time": false
+  "notification_duration": 2000,
+  "show_dwell_time": false,
+  "zone_radius": 75
 }

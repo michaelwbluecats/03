@@ -13,5 +13,6 @@
   ],
   "exclusion_zone":"",
   "notification_duration":4000,
-  "show_dwell_time": false
+  "show_dwell_time": false,
+  "zone_radius": 75
 }

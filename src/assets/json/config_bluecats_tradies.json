@@ -15,5 +15,6 @@
   ],
   "exclusion_zone": "Nate and Sandy",
   "notification_duration": 2000,
-  "show_dwell_time": false
+  "show_dwell_time": false,
+  "zone_radius": 75
 }
