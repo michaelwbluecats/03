@@ -9,6 +9,7 @@ var shared_timeout;
 var proportion;
 var offset = 0;
 var myFrames;
+var view = 'map';
 
 function nextFrame ( el, frameArray,  whichFrame, callback ) {
     if( whichFrame >= frameArray.length ) { return callback(); }
@@ -118,9 +119,19 @@ $(document).ready(function(){
         }
     });
 
+    $('#btn-swap-view').click(function () {
+        if(view == 'map'){
+            view = 'list';
+            $('#btn-list-view').click();
+        }else{
+            view = 'map';
+            $('#btn-map-view').click();
+        }
+    });
+
 
     $('.callout').hide();
-    $.getJSON('./assets/json/config_darren.json', function(data) {
+    $.getJSON('./assets/json/config_glen_hotel.json', function(data) {
         config = data;
         var quarter_duration = config.notification_duration / 4;
         var radius = config.zone_radius;
