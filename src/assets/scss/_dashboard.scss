@@ -101,9 +101,9 @@
             border-radius: 0px;
         }
         .num-pad {
-            padding-left: 15px;
+            //padding-left: 15px;
             .small-4 {
-                padding: 0.5em 0.3em;
+                padding: 0.3em 0.2em;
             }
         }
         .num {
@@ -126,12 +126,13 @@
             -o-transition: background-color .2s linear 0s;
         }
         .txt {
-            font-size: 2em;
+            font-size: 3em;
             text-align: center;
-            padding: 1.3em 0.3em;
+            padding: 0.5em 0;
             font-family: 'Lato', sans-serif;
             //line-height: 30px;
             color: #333;
+            font-weight: bolder;
         }
         .small {
             font-size: 15px;
