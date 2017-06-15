@@ -1,22 +1,31 @@
 <div class="row columns collapse expanded" style="background-color:#51b2f1; padding: 0.5vh;">
     <div class="large-6 columns">
-        <img src="/assets/img/BCT001-BD-logo-v5-02.svg" style="height: 48px; min-height:28px">
+        <img src="/assets/img/BCT001-BD-logo-v5-02.svg" style="height: 2.2rem; min-height:28px">
     </div>
+    <!--
     <div class="large-4 columns">
         <div class="small-12 medium-6 large-6 columns">
-            <div class="label small-12 text-center info-display" style="display: none">
+            <div class="label small-12 text-center info-display" style="">
                 <h5>Active Tags: <b id="activeTags"></b></h5>
             </div>
         </div>
-        <div class="small-12 medium-6 large-6 columns" style="display: none">
+        <div class="small-12 medium-6 large-6 columns" style="">
             <div class="label small-12 text-center info-display">
                 <h5>Avg Time: <b>2:01</b></h5>
             </div>
         </div>
     </div>
+    -->
+    <div class="large-4 columns">
+        <div style="display:block; margin-right:0;">
+            <a>
+                <img src="/assets/img/300x100(1)-100-map-swap.svg" style="height:2.2rem; float:right;">
+            </a>    
+        </div>
+    </div>    
 </div>
 <div class="row expanded">
-    <ul class="large-12 tabs menudisplay" data-tabs id="views">
+    <ul class="large-12 tabs menudisplay" data-tabs id="views" style="display:none;">
         <li class="tabs-title"><a id="btn-list-view" href="#list-view">List view</a></li>
         <li class="tabs-title is-active"><a id="btn-map-view" href="#map-view" aria-selected="true">Map View</a></li>
     </ul>
@@ -27,7 +36,7 @@
                 </div>
             </div>
             <div class="tabs-panel" id="map-view">
-                <div class="large-9 columns" style="background-color: white;">
+                <div class="small-12 medium-9 columns" style="background-color: grey;">
                     <div class="mapdisplay">
                         <svg id="mapbg" style="">
 
@@ -35,7 +44,7 @@
 
                     </div>
                 </div>
-                <div class="large-3 columns">
+                <div class="small-12 medium-3 columns">
                     <form class="search__form" action="">
                         <input class="search__input" name="search" type="search" placeholder="Enter #" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="tel" name="name" id="telNumber" class="form-control tel" value="" /> </form>
                     <div class="container">
