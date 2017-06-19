@@ -9,7 +9,7 @@ var shared_timeout;
 var proportion;
 var offset = 0;
 var myFrames;
-var view = 'map';
+var view = 'keypad';
 
 function nextFrame ( el, frameArray,  whichFrame, callback ) {
     if( whichFrame >= frameArray.length ) { return callback(); }
@@ -48,8 +48,8 @@ function showZone(num, returnTo){
         }
     });
 
-    $("#btn-map-view").click();
     if(event_beacon && event_edge){
+        $("#btn-map-view").click();
         var map = _.find(maps, function(m) { return m.id  == event_edge.mapID; });
         loadMap(map);
         var colour = _.find(config.zones, function(o) { return o.name == event_beacon.currentZone.name; });
@@ -60,7 +60,7 @@ function showZone(num, returnTo){
         shared_timeout = setTimeout(function(){
             $('.callout').hide();
             if(returnTo){
-                $(returnTo == 'map' ? '#btn-map-view' : '#btn-list-view').click();
+                $(returnTo == 'map' ? '#btn-map-view' : (returnTo == 'list' ? '#btn-list-view' : '#btn-keypad-view')).click();
             }
         }, config.notification_duration)
     }else{
@@ -69,8 +69,8 @@ function showZone(num, returnTo){
         $('.callout').html('<h4>Tag not found</h4>').show();
         shared_timeout = setTimeout(function(){
             $('.callout').hide();
-            if(config.default_view){
-                $(config.default_view == 'map' ? '#btn-map-view' : '#btn-list-view').click();
+            if(returnTo){
+                $(returnTo == 'map' ? '#btn-map-view' : (returnTo == 'list' ? '#btn-list-view' : '#btn-keypad-view')).click();
             }
         }, config.notification_duration)
     }
@@ -109,7 +109,7 @@ $(document).ready(function(){
         var text = $.trim(num.find('.txt').clone().children().remove().end().text());
         var telNumber = $('#telNumber');
         if(text === 'Search'){
-            showZone($(telNumber).val());
+            showZone($(telNumber).val(), 'keypad');
             $(telNumber).val('');
         } else if(text === 'Del'){
             $(telNumber).val('');
@@ -120,12 +120,12 @@ $(document).ready(function(){
     });
 
     $('#btn-swap-view').click(function () {
-        if(view == 'map'){
+        if(view == 'keypad'){
             view = 'list';
             $('#btn-list-view').click();
         }else{
-            view = 'map';
-            $('#btn-map-view').click();
+            view = 'keypad';
+            $('#btn-keypad-view').click();
         }
     });
 
