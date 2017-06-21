@@ -2,6 +2,22 @@
     color: white;
 }
 
+.navbar {
+    background-color:#51b2f1; 
+    padding: 0.5vh; 
+    position: relative;    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    h4 {
+        color: white;
+    }
+}
 
 .info-display {
     background-color: #51b2f1;
