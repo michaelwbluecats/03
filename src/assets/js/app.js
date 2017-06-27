@@ -131,7 +131,7 @@ $(document).ready(function(){
 
 
     $('.callout').hide();
-    $.getJSON('./assets/json/config_glen_hotel.json', function(data) {
+    $.getJSON('./assets/json/config_bluecats_tradies.json', function(data) {
         config = data;
         var quarter_duration = config.notification_duration / 4;
         var radius = config.zone_radius;
@@ -164,7 +164,7 @@ $(document).ready(function(){
                     var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
                     var device_type = parseInt(beacon.bcIdentifier.substring(20, 22), 16);
                     if(config.show_dwell_time){
-                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
+                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
                             '<div class="tag-number">' + tag_num + '</div>' +
                             '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                             '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
@@ -172,7 +172,7 @@ $(document).ready(function(){
                             '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
                             '</td></tr></tbody></table></a></div>';
                     }else{
-                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" href="javacript:void(0)" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
+                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
                             '<div class="tag-number">' + tag_num + '</div>' +
                             '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                             '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
