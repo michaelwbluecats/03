@@ -266,7 +266,8 @@
 .search__form {
     width: 75%;
     max-width: 900px;
-    margin: 1em auto;
+    margin: 0.5em auto;
+    overflow: visible;
 }
 
 .search__input {
@@ -283,6 +284,7 @@
     box-shadow: none;
     height: 1em;
     overflow: visible;
+    margin-bottom: 0;
 }
 
 .search__input::-webkit-input-placeholder {
