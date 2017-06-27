@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8860f9d4-5439-4d8c-bdd1-b37447b7d438" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/2f134a00-28a7-98a4-cb4d-4db0ed45a0e6.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/json/config_glen_hotel.json" afterPath="$PROJECT_DIR$/src/assets/json/config_glen_hotel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/js/app.js" afterPath="$PROJECT_DIR$/src/assets/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/json/config_bankstown.json" afterPath="$PROJECT_DIR$/src/assets/json/config_bankstown.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/json/config_bluecats_australia.json" afterPath="$PROJECT_DIR$/src/assets/json/config_bluecats_australia.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/json/config_bluecats_tradies.json" afterPath="$PROJECT_DIR$/src/assets/json/config_bluecats_tradies.json" />
     </list>
     <ignored path="_table_tracking.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +31,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state vertical-scroll-proportion="-29.423077">
+              <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -37,34 +41,64 @@
       <file leaf-file-name="config_darren.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/json/config_darren.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846">
+            <state vertical-scroll-proportion="0.0">
               <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assets/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="117" column="53" selection-start-line="117" selection-start-column="53" selection-end-line="117" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.4894309">
+              <caret line="133" column="52" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
               <folding>
-                <marker date="1497497160313" expanded="true" signature="6109:6127" placeholder="..." />
-                <marker date="1497497160313" expanded="true" signature="6554:6598" placeholder="..." />
-                <marker date="1497497160313" expanded="true" signature="6782:6807" placeholder="..." />
-                <marker date="1497497160313" expanded="true" signature="7084:7102" placeholder="..." />
-                <marker date="1497497160313" expanded="true" signature="7529:7573" placeholder="..." />
+                <marker date="1498535324558" expanded="true" signature="6115:6133" placeholder="..." />
+                <marker date="1498535324558" expanded="true" signature="6535:6579" placeholder="..." />
+                <marker date="1498535324558" expanded="true" signature="6763:6788" placeholder="..." />
+                <marker date="1498535324558" expanded="true" signature="7065:7083" placeholder="..." />
+                <marker date="1498535324558" expanded="true" signature="7485:7529" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config_glen_hotel.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config_bluecats_tradies.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/json/config_bluecats_tradies.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config_bankstown.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/json/config_bankstown.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.653847">
+              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config_glen_hotel.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/json/config_glen_hotel.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41081703">
+            <state vertical-scroll-proportion="-13.730769">
               <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config_bluecats_australia.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/json/config_bluecats_australia.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -99,14 +133,14 @@
         <option value="$PROJECT_DIR$/src/layouts/default.html" />
         <option value="$PROJECT_DIR$/src/assets/scss/_dashboard.scss" />
         <option value="$PROJECT_DIR$/local_vendor/bclib/bclib.js" />
-        <option value="$PROJECT_DIR$/src/assets/json/config_bankstown.json" />
-        <option value="$PROJECT_DIR$/src/assets/json/config_bluecats_australia.json" />
         <option value="$PROJECT_DIR$/src/assets/json/config_bluecats_demo.json" />
-        <option value="$PROJECT_DIR$/src/assets/json/config_bluecats_tradies.json" />
         <option value="$PROJECT_DIR$/src/assets/json/config_darren.json" />
         <option value="$PROJECT_DIR$/src/pages/index.html" />
-        <option value="$PROJECT_DIR$/src/assets/js/app.js" />
         <option value="$PROJECT_DIR$/src/assets/json/config_glen_hotel.json" />
+        <option value="$PROJECT_DIR$/src/assets/json/config_bluecats_tradies.json" />
+        <option value="$PROJECT_DIR$/src/assets/json/config_bankstown.json" />
+        <option value="$PROJECT_DIR$/src/assets/json/config_bluecats_australia.json" />
+        <option value="$PROJECT_DIR$/src/assets/js/app.js" />
       </list>
     </option>
   </component>
@@ -125,8 +159,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1296" />
+    <option name="height" value="776" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -153,6 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,7 +234,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_table_tracking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_table_tracking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_table_tracking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_table_tracking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_table_tracking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_table_tracking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,32 +342,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="local_vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_table_tracking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_table_tracking" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="local_vendor" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bclib" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,16 +366,16 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\projects\bluecats.com\_table_tracking\local_vendor\bclib" />
-      <recent name="C:\projects\bluecats.com\_table_tracking\src\assets\json" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projects\bluecats.com\_table_tracking\src\assets\img" />
       <recent name="C:\projects\bluecats.com\_table_tracking\src\assets\json" />
       <recent name="C:\projects\bluecats.com\_table_tracking\local_vendor\bclib" />
       <recent name="C:\projects\bluecats.com\_table_tracking\dist\assets\json" />
       <recent name="C:\projects\bluecats.com\_table_tracking\local_vendor\mqtt" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\bluecats.com\_table_tracking\local_vendor\bclib" />
+      <recent name="C:\projects\bluecats.com\_table_tracking\src\assets\json" />
     </key>
   </component>
   <component name="RunManager">
@@ -364,27 +442,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19441517" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29332274" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -398,9 +476,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17597471" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19441517" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -423,6 +501,44 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/json/config_darren.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="53" selection-start-line="117" selection-start-column="53" selection-end-line="117" selection-end-column="53" />
+          <folding>
+            <marker date="1498535324558" expanded="true" signature="6115:6133" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6535:6579" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6763:6788" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7065:7083" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7485:7529" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/json/config_glen_hotel.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/json/config_bluecats_australia.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -435,7 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -451,11 +566,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1497497160313" expanded="true" signature="6109:6127" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="6554:6598" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="6782:6807" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="7084:7102" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="7529:7573" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6115:6133" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6535:6579" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6763:6788" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7065:7083" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7485:7529" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -508,11 +623,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
           <folding>
-            <marker date="1497497160313" expanded="true" signature="6109:6127" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="6554:6598" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="6782:6807" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="7084:7102" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="7529:7573" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6115:6133" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6535:6579" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6763:6788" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7065:7083" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7485:7529" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -566,11 +681,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding>
-            <marker date="1497497160313" expanded="true" signature="6109:6127" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="6554:6598" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="6782:6807" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="7084:7102" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="7529:7573" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6115:6133" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6535:6579" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6763:6788" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7065:7083" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7485:7529" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -673,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="26" column="2" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.090909">
           <caret line="74" column="5" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,7 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.109091">
           <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="12.598883">
           <caret line="1838" column="42" selection-start-line="1838" selection-start-column="42" selection-end-line="1838" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,23 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48906788">
           <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/json/config_bankstown.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/json/config_bluecats_australia.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,53 +835,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.153846">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/json/config_bluecats_tradies.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/json/config_darren.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
+        <state vertical-scroll-proportion="0.0">
           <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/json/config_glen_hotel.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state vertical-scroll-proportion="-29.423077">
+          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/json/config_bluecats_tradies.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/json/config_bankstown.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.653847">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/json/config_bluecats_australia.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="53" selection-start-line="117" selection-start-column="53" selection-end-line="117" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.4894309">
+          <caret line="133" column="52" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
           <folding>
-            <marker date="1497497160313" expanded="true" signature="6109:6127" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="6554:6598" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="6782:6807" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="7084:7102" placeholder="..." />
-            <marker date="1497497160313" expanded="true" signature="7529:7573" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6115:6133" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6535:6579" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="6763:6788" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7065:7083" placeholder="..." />
+            <marker date="1498535324558" expanded="true" signature="7485:7529" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/json/config_glen_hotel.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41081703">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>

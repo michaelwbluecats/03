@@ -1,20 +1,20 @@
 {
-  "ip": "10.14.1.45",
+  "ip": "192.168.0.21",
   "site":"fbc96a00-71a7-79b7-bc40-107a4701c5aa",
   "maps":[
     {"id":"020e4b00-74a7-6783-b74f-368bd072bbb0", "image":"./assets/img/020e4b00-74a7-6783-b74f-368bd072bbb0.jpg"},
     {"id":"4f2a4b00-74a7-4f86-da4b-4737204c7e2e", "image":"./assets/img/4f2a4b00-74a7-4f86-da4b-4737204c7e2e.jpg"}
   ],
   "zones": [
-    {"name": "Members","colour_code": "#1779ba"},
-    {"name": "Sports", "colour_code": "#cc4b37"},
-    {"name": "TV", "colour_code": "#3adb76"},
-    {"name": "Pizza", "colour_code": "#3adb76"},
-    {"name": "Cocktail", "colour_code": "#ffae00"},
-    {"name": "Billiards", "colour_code": "#767676"}
+    {"name": "Members","colour_code": "#1369FF"},
+    {"name": "Sports", "colour_code": "#A106FF"},
+    {"name": "TV", "colour_code": "#007C0E"},
+    {"name": "Pizza", "colour_code": "#D43900"},
+    {"name": "Waratah", "colour_code": "#E70000"},
+    {"name": "Billiards", "colour_code": "#696969"}
   ],
-  "exclusion_zone": "Nate and Sandy",
-  "notification_duration": 2000,
+  "exclusion_zone": "",
+  "notification_duration": 4000,
   "show_dwell_time": false,
   "zone_radius": 75
 }
