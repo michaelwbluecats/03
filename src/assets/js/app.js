@@ -54,21 +54,21 @@ function showZone(num, returnTo){
         loadMap(map);
         var colour = _.find(config.zones, function(o) { return o.name == event_beacon.currentZone.name; });
         highlightZone({"x": offset + (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"]});
-        $('.callout').css('background-color', colour["colour_code"]);
-        $('.callout').css('border', '2px ' + colour["colour_code"]);
-        $('.callout').html('<h4>Tag ' + num + '</h4> <h3><b>' + event_beacon.currentZone.name + '</b></h3>').show();
+        $('.overlay').css('background-color', colour["colour_code"]);
+        $('.overlay').css('border', '2px ' + colour["colour_code"]);
+        $('.overlay').html('<div class="overlay-text"><h4>Tag ' + num + '&nbsp;&nbsp;<b>' + event_beacon.currentZone.name + '</b></h4></div>').show();
         shared_timeout = setTimeout(function(){
-            $('.callout').hide();
+            $('.overlay').hide();
             if(returnTo){
                 $(returnTo == 'map' ? '#btn-map-view' : (returnTo == 'list' ? '#btn-list-view' : '#btn-keypad-view')).click();
             }
         }, config.notification_duration)
     }else{
-        $('.callout').css('background-color', 'red');
-        $('.callout').css('border', '2px red');
-        $('.callout').html('<h4>Tag not found</h4>').show();
+        $('.overlay').css('background-color', 'red');
+        $('.overlay').css('border', '2px red');
+        $('.overlay').html('<div class="overlay-text"><h4>Tag not found</h4></div>').show();
         shared_timeout = setTimeout(function(){
-            $('.callout').hide();
+            $('.overlay').hide();
             if(returnTo){
                 $(returnTo == 'map' ? '#btn-map-view' : (returnTo == 'list' ? '#btn-list-view' : '#btn-keypad-view')).click();
             }
@@ -104,7 +104,7 @@ function loadMap(map){
 $(document).ready(function(){
     $('.num').click(function () {
         clearTimeout(shared_timeout);
-        $('.callout').hide();
+        $('.overlay').hide();
         var num = $(this);
         var text = $.trim(num.find('.txt').clone().children().remove().end().text());
         var telNumber = $('#telNumber');
@@ -130,7 +130,7 @@ $(document).ready(function(){
     });
 
 
-    $('.callout').hide();
+    $('.overlay').hide();
     $.getJSON('./assets/json/config_bluecats_tradies.json', function(data) {
         config = data;
         var quarter_duration = config.notification_duration / 4;
