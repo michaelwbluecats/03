@@ -270,7 +270,7 @@
 .search__form {
     width: 75%;
     max-width: 900px;
-    margin: 1em auto;
+    margin: 1em auto 0 auto;
 }
 
 .search__input {
@@ -285,8 +285,10 @@
     border-bottom: 4px solid;
     border: none;
     box-shadow: none;
-    height: 1em;
+    height: 1.2em;
     overflow: visible;
+    text-align: center;
+    font-weight: bolder;
 }
 
 .search__input::-webkit-input-placeholder {
