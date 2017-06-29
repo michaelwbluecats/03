@@ -102,6 +102,23 @@ function loadMap(map){
 }
 
 $(document).ready(function(){
+    $(document).on('keypress', function(e) {
+        var telNumber = $('#telNumber');
+        var intkey = _.parseInt(e.key);
+        if(!_.isNaN(intkey)){
+            $(telNumber).val(telNumber.val() + intkey);
+        }else if(e.key == 'Enter'){
+            showZone($(telNumber).val());
+            $(telNumber).val('');
+        }else if(e.key == '.'){
+            $(telNumber).val('');
+        }
+    });
+
+    $('#imgLogo').click(function(){
+        location.reload(true);
+    });
+
     $('.num').click(function () {
         clearTimeout(shared_timeout);
         $('.callout').hide();
@@ -131,7 +148,7 @@ $(document).ready(function(){
 
 
     $('.callout').hide();
-    $.getJSON('./assets/json/config_bluecats_tradies.json', function(data) {
+    $.getJSON('./assets/json/config_bluecats_australia.json', function(data) {
         config = data;
         var quarter_duration = config.notification_duration / 4;
         var radius = config.zone_radius;
