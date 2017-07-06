@@ -1,0 +1,17 @@
+{
+  "ip": "10.14.1.44",
+  "site":"d2f74800-3ea2-7da1-d34e-d27f15b00630",
+  "zones": [
+    {"name": "Boardroom","colour_code": "#1779ba"},
+    {"name": "IT", "colour_code": "#767676"},
+    {"name": "Executive", "colour_code": "#3adb76"},
+    {"name": "Marketing", "colour_code": "#3adb76"},
+    {"name": "Sales", "colour_code": "#ffae00"},
+    {"name": "Blueboard", "colour_code": "#cc4b37"},
+    {"name": "Round Room", "colour_code": "#cc4b37"}
+  ],
+  "exclusion_zone":"",
+  "notification_duration":3000,
+  "show_dwell_time": false,
+  "zone_radius": 75
+}

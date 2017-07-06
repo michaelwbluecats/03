@@ -36,11 +36,14 @@ gulp.task('default',
 // This happens every time a build starts
 function clean(done) {
   rimraf(PATHS.dist, done);
+  rimraf(PATHS.config, done);
 }
 
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
+  gulp.src('src/config/config.json')
+      .pipe(gulp.dest(PATHS.config));
   return gulp.src(PATHS.assets)
     .pipe(gulp.dest(PATHS.dist + '/assets'));
 }
@@ -124,7 +127,7 @@ function images() {
 // Start a server with BrowserSync to preview the site in
 function server(done) {
   browser.init({
-    server: PATHS.dist, port: PORT
+    server: [PATHS.dist, PATHS.config], port: PORT
   });
   done();
 }

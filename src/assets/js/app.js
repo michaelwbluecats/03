@@ -148,7 +148,7 @@ $(document).ready(function(){
 
 
     $('.overlay').hide();
-    $.getJSON('./assets/json/config_bluecats_australia.json', function(data) {
+    $.getJSON('./config.json', function(data) {
         config = data;
         var quarter_duration = config.notification_duration / 4;
         var radius = config.zone_radius;
@@ -160,9 +160,13 @@ $(document).ready(function(){
         ];
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
-            _.each(data.maps, function(map){
-                var mapInfo = bclib.locationEngine.getMapInfo(map.id);
-                mapInfo.image = map.image;
+            console.log(bclib.locationEngine);
+            var mapIds = bclib.locationEngine.getMapIds();
+            _.each(mapIds, function(map){
+                var mapInfo = bclib.locationEngine.getMapInfo(map);
+                console.log(mapInfo);
+                mapInfo.image = mapInfo.url;
+                //mapInfo.image = map.image;
                 maps.push(mapInfo);
             });
 
@@ -178,6 +182,9 @@ $(document).ready(function(){
                     }
                     activeTags++;
                     var colour = _.find(config.zones, function(o) { return o.name == beacon.currentZone.name; });
+                    if(!colour){
+                        colour = '#000000';
+                    }
                     var tag_num = parseInt(beacon.bcIdentifier.substring(26, 30), 16);
                     var device_type = parseInt(beacon.bcIdentifier.substring(20, 22), 16);
                     if(config.show_dwell_time){
