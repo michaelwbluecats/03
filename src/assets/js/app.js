@@ -19,9 +19,10 @@ function nextFrame ( el, frameArray,  whichFrame, callback ) {
 function highlightZone(objZone){
     var zone = svg.g();
     var r = zone.circle(objZone.x,objZone.y, config.zone_radius).attr({ stroke: '#123456', 'strokeWidth': 2, fill: objZone["colour_code"], opacity: 0.2 });
-    nextFrame(r, myFrames, 0, function(){
+    /*nextFrame(r, myFrames, 0, function(){
         zone.remove();
     });
+    */
 }
 
 function showZone(num, returnTo){
