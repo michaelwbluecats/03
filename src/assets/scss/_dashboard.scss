@@ -285,14 +285,12 @@
     height: 1em;
     overflow: visible;
     margin-bottom: 0;
-    &:read-only {
+    &:disabled {
         cursor:default;
+        background: transparent;
         &:focus {
             //background: #8a8a8a;
         }
-    }
-    &:-moz-read-only {
-        cursor: default;
     }
 }
 
