@@ -105,6 +105,7 @@ function loadMap(map){
 
 $(document).ready(function(){
     $(document).on('keypress', function(e) {
+        $('.overlay').hide();
         var telNumber = $('#telNumber');
         var intkey = _.parseInt(e.key);
         if(!_.isNaN(intkey)){
@@ -123,7 +124,7 @@ $(document).ready(function(){
 
     $('.num').click(function () {
         clearTimeout(shared_timeout);
-        $('.callout').hide();
+        $('.overlay').hide();
         var num = $(this);
         var text = $.trim(num.find('.txt').clone().children().remove().end().text());
         var telNumber = $('#telNumber');
