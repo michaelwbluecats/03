@@ -38,6 +38,7 @@ function showZone(num, returnTo){
     });
 
     if(!event_beacon){
+        $('.overlay').hide();
         return;
     }
 
@@ -49,6 +50,7 @@ function showZone(num, returnTo){
     });
 
     $("#btn-map-view").click();
+    $('.overlay').hide();
     if(event_beacon && event_edge){
         var map = _.find(maps, function(m) { return m.id  == event_edge.mapID; });
         loadMap(map);
@@ -164,9 +166,9 @@ $(document).ready(function(){
             var mapIds = bclib.locationEngine.getMapIds();
             _.each(mapIds, function(map){
                 var mapInfo = bclib.locationEngine.getMapInfo(map);
-                console.log(mapInfo);
-                mapInfo.image = mapInfo.url;
+                //mapInfo.image = mapInfo.url;
                 //mapInfo.image = map.image;
+                mapInfo.image = mapInfo.url.substr(mapInfo.url.lastIndexOf("/"));
                 maps.push(mapInfo);
             });
 
