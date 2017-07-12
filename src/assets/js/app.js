@@ -18,17 +18,17 @@ function nextFrame ( el, frameArray,  whichFrame, callback ) {
 
 function highlightZone(objZone){
     var zone = svg.g();
-    var r = zone.circle(objZone.x,objZone.y, config.zone_radius).attr({ stroke: '#123456', 'strokeWidth': 2, fill: objZone["colour_code"], opacity: 0.4 });
+    var r = zone.circle(objZone.x,objZone.y, config.zone_radius).attr({ stroke: '#123456', 'strokeWidth': 2, fill: objZone["colour_code"], opacity: 1 });
     var t = zone.text(objZone.x -25,objZone.y + 10, objZone.number);
     t.attr({
         'font-size': '2rem',
         'font-weight': 'bolder',
         'fill': 'white'
     });
-    /*nextFrame(r, myFrames, 0, function(){
+    nextFrame(r, myFrames, 0, function(){
         zone.remove();
     });
-    */
+
 }
 
 function showZone(num, returnTo){
@@ -160,10 +160,10 @@ $(document).ready(function(){
         var quarter_duration = config.notification_duration / 4;
         var radius = config.zone_radius;
         myFrames = [
-            {animation: { opacity: 0.4, r: radius + (radius / 4) }, dur: quarter_duration },
-            {animation: { opacity: 0.2, r: radius }, dur: quarter_duration },
-            {animation: { opacity: 0.4, r: radius + (radius / 4) }, dur: quarter_duration },
-            {animation: { opacity: 0.2, r: radius }, dur: quarter_duration }
+            {animation: { opacity: 1.0, r: radius + (radius / 4) }, dur: quarter_duration },
+            {animation: { opacity: 0.8, r: radius }, dur: quarter_duration },
+            {animation: { opacity: 1.0, r: radius + (radius / 4) }, dur: quarter_duration },
+            {animation: { opacity: 0.8, r: radius }, dur: quarter_duration }
         ];
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
