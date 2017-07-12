@@ -19,6 +19,10 @@ function nextFrame ( el, frameArray,  whichFrame, callback ) {
 function highlightZone(objZone){
     var zone = svg.g();
     var r = zone.circle(objZone.x,objZone.y, config.zone_radius).attr({ stroke: '#123456', 'strokeWidth': 2, fill: objZone["colour_code"], opacity: 0.2 });
+    var t = zone.text(objZone.x,objZone.y, objZone.number);
+    t.attr({
+        'font-size':24
+    });
     /*nextFrame(r, myFrames, 0, function(){
         zone.remove();
     });
@@ -54,7 +58,7 @@ function showZone(num, returnTo){
         var map = _.find(maps, function(m) { return m.id  == event_edge.mapID; });
         loadMap(map);
         var colour = _.find(config.zones, function(o) { return o.name == event_beacon.currentZone.name; });
-        highlightZone({"x": offset + (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"]});
+        highlightZone({"x": offset + (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"], "number": num});
         $('.overlay').css('background-color', colour["colour_code"]);
         $('.overlay').css('border', '2px ' + colour["colour_code"]);
         $('.overlay').html('<div class="overlay-text"><h4>Tag ' + num + '&nbsp;&nbsp;<b>' + event_beacon.currentZone.name + '</b></h4></div>').show();
