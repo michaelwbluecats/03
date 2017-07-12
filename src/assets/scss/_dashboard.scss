@@ -208,10 +208,12 @@
         position: relative;
         table {
             margin: 0;
-            td.tag-location {
-                width: 60%;
+            width: 100%;
+            table-layout: fixed;
+            td.tag-no-box {
+                width: 40%;
                 @include breakpoint(xlarge) {
-                    width: 70%;
+                    width: 30%;
                 }
             }
         }
@@ -249,8 +251,13 @@
         .tag-dwell-time {
             background-color: black;
         }
-        .tag-location h3 {
-            font-weight: bolder;
+        .tag-location {
+            h5 {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
     }
 }

@@ -18,10 +18,17 @@ function nextFrame ( el, frameArray,  whichFrame, callback ) {
 
 function highlightZone(objZone){
     var zone = svg.g();
-    var r = zone.circle(objZone.x,objZone.y, config.zone_radius).attr({ stroke: '#123456', 'strokeWidth': 2, fill: objZone["colour_code"], opacity: 0.2 });
+    var r = zone.circle(objZone.x,objZone.y, config.zone_radius).attr({ stroke: '#123456', 'strokeWidth': 2, fill: objZone["colour_code"], opacity: 1 });
+    var t = zone.text(objZone.x -25,objZone.y + 10, objZone.number);
+    t.attr({
+        'font-size': '2rem',
+        'font-weight': 'bolder',
+        'fill': 'white'
+    });
     nextFrame(r, myFrames, 0, function(){
         zone.remove();
     });
+
 }
 
 function showZone(num, returnTo){
@@ -55,7 +62,7 @@ function showZone(num, returnTo){
         var map = _.find(maps, function(m) { return m.id  == event_edge.mapID; });
         loadMap(map);
         var colour = _.find(config.zones, function(o) { return o.name == event_beacon.currentZone.name; });
-        highlightZone({"x": offset + (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"]});
+        highlightZone({"x": offset + (proportion ? event_edge.x * proportion : event_edge.x), "y": (proportion ? event_edge.y * proportion : event_edge.y), "colour_code": colour["colour_code"], "number": num});
         $('.overlay').css('background-color', colour["colour_code"]);
         $('.overlay').css('border', '2px ' + colour["colour_code"]);
         $('.overlay').html('<div class="overlay-text"><h4>Tag ' + num + '&nbsp;&nbsp;<b>' + event_beacon.currentZone.name + '</b></h4></div>').show();
@@ -156,10 +163,10 @@ $(document).ready(function(){
         var quarter_duration = config.notification_duration / 4;
         var radius = config.zone_radius;
         myFrames = [
-            {animation: { opacity: 0.4, r: radius + (radius / 4) }, dur: quarter_duration },
-            {animation: { opacity: 0.2, r: radius }, dur: quarter_duration },
-            {animation: { opacity: 0.4, r: radius + (radius / 4) }, dur: quarter_duration },
-            {animation: { opacity: 0.2, r: radius }, dur: quarter_duration }
+            {animation: { opacity: 1.0, r: radius + (radius / 4) }, dur: quarter_duration },
+            {animation: { opacity: 0.8, r: radius }, dur: quarter_duration },
+            {animation: { opacity: 1.0, r: radius + (radius / 4) }, dur: quarter_duration },
+            {animation: { opacity: 0.8, r: radius }, dur: quarter_duration }
         ];
         bclib.locationEngine.Core(data.ip, data.site);
         bclib.locationEngine.on('setup_success', function(x){
@@ -199,7 +206,7 @@ $(document).ready(function(){
                             '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
                             '</td></tr></tbody></table></a></div>';
                     }else{
-                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
+                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" class="tag-no-box" >' +
                             '<div class="tag-number">' + tag_num + '</div>' +
                             '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                             '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
