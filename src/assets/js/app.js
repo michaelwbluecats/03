@@ -197,7 +197,7 @@ $(document).ready(function(){
                             '<span class="">' + moment.duration(beacon.zoneDwellTime, 'seconds').humanize() + '</span></h6>' +
                             '</td></tr></tbody></table></a></div>';
                     }else{
-                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" >' +
+                        html += '<div style="position: relative" class="small-12 medium-4 large-3 columns ' + (device_type == 2 ? 'mobile-2 ' : ' ') + (index == (beacons.length -1) ? "end" : "") + '"><a class="list-details" onclick="showZone(' + tag_num + ', \'list\')"><table><tbody><tr><td rowspan="3" class="tag-no-box" >' +
                             '<div class="tag-number">' + tag_num + '</div>' +
                             '</td><td class="tag-location" rowspan="2" style="background-color:' + colour.colour_code + ';">' +
                             '<h5>' + (beacon.currentZone ? beacon.currentZone.name : '') + '</h5>' +
