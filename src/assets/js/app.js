@@ -18,10 +18,12 @@ function nextFrame ( el, frameArray,  whichFrame, callback ) {
 
 function highlightZone(objZone){
     var zone = svg.g();
-    var r = zone.circle(objZone.x,objZone.y, config.zone_radius).attr({ stroke: '#123456', 'strokeWidth': 2, fill: objZone["colour_code"], opacity: 0.2 });
-    var t = zone.text(objZone.x,objZone.y, objZone.number);
+    var r = zone.circle(objZone.x,objZone.y, config.zone_radius).attr({ stroke: '#123456', 'strokeWidth': 2, fill: objZone["colour_code"], opacity: 0.4 });
+    var t = zone.text(objZone.x -25,objZone.y + 10, objZone.number);
     t.attr({
-        'font-size':24
+        'font-size': '2rem',
+        'font-weight': 'bolder',
+        'fill': 'white'
     });
     /*nextFrame(r, myFrames, 0, function(){
         zone.remove();
